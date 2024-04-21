@@ -1,8 +1,6 @@
 import qrcode
-import time
-import os
 
-link = "https://getbackyourdata.com/"
+link = "Link_to_generate_QR"
 
 qr = qrcode.QRCode(
     version=1,
@@ -14,9 +12,6 @@ qr.add_data(link)
 qr.make(fit=True)
 
 img = qr.make_image(fill_color="black", back_color="white")
+img.save("qrcode.png")
 
-img.save("qrcode_with_link.png")
-time.sleep(1)
-
-print("QR code generated successfully.")
-os.abort()
+print("QR code generated")
